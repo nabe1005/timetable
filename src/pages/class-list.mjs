@@ -8,7 +8,7 @@ export class ClassListPage extends HTMLElement {
   /** @type {import("../types.mjs").ClassData[]} */
   classDatas = [];
 
-  css = () => /* css */ `
+  css = () => /* CSS */ `
     ${basicStyle}
 
     :host .class-list {
@@ -55,8 +55,10 @@ export class ClassListPage extends HTMLElement {
     }
   `;
 
-  html = () => /* html */ `
-    <style>${this.css()}</style>
+  html = () => /* HTML */ `
+    <style>
+      ${this.css()}
+    </style>
     <div class="class-list">
       <div class="header">
         <button class="move-home">⬅️</button>
@@ -64,13 +66,13 @@ export class ClassListPage extends HTMLElement {
         <button class="add">➕</button>
       </div>
       <div class="list">
-      ${this.classDatas
-        .map(
-          (classData) => /* html */ `
+        ${this.classDatas
+          .map(
+            (classData) => /* html */ `
           <class-list-item class-data='${JSON.stringify(classData)}'></class-list-item>
         `
-        )
-        .join("")}
+          )
+          .join("")}
       </div>
     </div>
   `;

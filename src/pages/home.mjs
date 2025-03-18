@@ -2,9 +2,7 @@ export class HomePage extends HTMLElement {
   /** @type {ShadowRoot | undefined} */
   shadowRoot = undefined;
 
-  html = () => /* html */ `
-    <span>home page</span>
-  `;
+  html = () => /* HTML */ ` <span>home page</span> `;
 
   constructor() {
     super();
